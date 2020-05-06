@@ -9,10 +9,9 @@ def nyc_pigeon_organizer(data)
       name_index = 0
         while name_index < name.length do
           if reorganized_data[name[name_index]][attribute_var]
-            reorganized_data[name[name_index]][attribute_var] << category
+            reorganized_data[name[name_index]][attribute_var] << category.to_s
           else
-            reorganized_data[name[name_index]][attribute_var] = []
-            reorganized_data[name[name_index]][attribute_var] << category
+            reorganized_data[name[name_index]][attribute_var] = [category.to_s]
           end
           name_index+=1
         end
