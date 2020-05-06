@@ -7,10 +7,10 @@ def nyc_pigeon_organizer(data)
     attribute_var = attribute
     value_hash.each do |category, name|
       name_index = 0
-      binding.pry
         while name_index < name.length do
           if reorganized_data[name][name_index][attribute_var]
             reorganized_data[name][name_index][attribute_var] << category
+            binding.pry
           else
             reorganized_data[name][name_index][attribute_var] = [category]
           end
