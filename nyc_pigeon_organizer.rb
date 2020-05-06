@@ -11,7 +11,8 @@ def nyc_pigeon_organizer(data)
           if reorganized_data[name[name_index]][attribute_var]
             reorganized_data[name[name_index]][attribute_var] << category
           else
-            reorganized_data[name[name_index]][attribute_var] = [category]
+            reorganized_data[name[name_index]][attribute_var] = []
+            reorganized_data[name[name_index]][attribute_var] << category
           end
           name_index+=1
         end
