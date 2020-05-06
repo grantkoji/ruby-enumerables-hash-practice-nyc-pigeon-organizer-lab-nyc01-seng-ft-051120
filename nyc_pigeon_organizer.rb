@@ -15,7 +15,7 @@ def nyc_pigeon_organizer(data)
           end
           binding.pry
           name_index+=1
-        end  
+        end
     end
   end
   reorganized_data
