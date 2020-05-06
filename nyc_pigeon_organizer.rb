@@ -3,18 +3,19 @@ require 'pry'
 def nyc_pigeon_organizer(data)
   reorganized_data = {}
   data.each do |attribute, value|
-    value_hash = value
-    attribute_var = attribute
-    value_hash.each do |category, name|
-      name_index = 0
-        while name_index < name.length do
-          if reorganized_data[name[name_index]][attribute_var]
-            reorganized_data[name[name_index]][attribute_var] << category.to_s
-          else
-            reorganized_data[name[name_index]][attribute_var] = [category.to_s]
-          end
-          name_index+=1
+    value.each do |category, names|
+      names.each do |name|
+
+        if !reorganized_data[name]
+          reorganized_data[name] = {}
         end
+
+        if !reorganized_data[name][attribute]
+          reorganized_data[name][attribute] = []
+        end
+
+        reorganized_data[name][attribute] << category.to_s
+      end
     end
   end
   reorganized_data
